@@ -1,2 +1,6 @@
-"Little Web Template for projects, type gulp in cmd to start working" 
-"# gulp-webpack-template" 
+# gulp-webpack-template"
+
+npm scripts to start working
+
+  - npm run serve (starts dev mode with source maps)
+  - npm run build (build a prod version)
