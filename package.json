@@ -15,16 +15,16 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "gsap": "^3.0.1"
+    "gsap": "^3.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "autoprefixer": "^9.7.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
     "babel-preset-stage-3": "^6.24.1",
     "browser-sync": "^2.26.7",
-    "css-loader": "^3.2.1",
+    "css-loader": "^3.4.2",
     "del": "^4.1.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "gulp": "^4.0.2",
@@ -42,7 +42,7 @@
     "require-dir": "^1.2.0",
     "style-loader": "^0.23.1",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-stream": "^5.2.1"
   }
