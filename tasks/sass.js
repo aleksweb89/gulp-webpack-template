@@ -14,7 +14,11 @@ module.exports = function (options) {
   return function() {
     return gulp.src(options.src)
       .pipe(gulpIf(isDevelopment, sourcemaps.init()))
-      .pipe(sass().on('error', sass.logError))
+      .pipe(sass({
+        includePaths: [
+          'node_modules'
+        ]
+      }).on('error', sass.logError))
       .pipe(postcss([autoprefixer()]))
       .pipe(cleanCss({compatibility: 'ie8'}))
       .pipe(gulpIf(isDevelopment, sourcemaps.write()))
@@ -22,13 +26,3 @@ module.exports = function (options) {
   }
   
 };
-
-// gulp.task('sass', function (options) {
-//   return gulp.src('./src/sass/main.sass')
-//       .pipe(gulpIf(isDevelopment, sourcemaps.init()))
-//       .pipe(sass().on('error', sass.logError))
-//       .pipe(postcss([autoprefixer()]))
-//       .pipe(cleanCss({compatibility: 'ie8'}))
-//       .pipe(gulpIf(isDevelopment, sourcemaps.write()))
-//       .pipe(gulp.dest('./build/css'))
-// })

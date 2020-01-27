@@ -1,3 +1,4 @@
+const path = require('path');
 'use strict'
 
 const gulp = require('gulp');
@@ -9,12 +10,15 @@ const named = require('vinyl-named');
 const gulplog = require('gulplog');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+const isDev =  process.env.NODE_ENV === 'development'
 
 let webConfig = {
-  mode: isDevelopment ? 'development' : 'production',
-  watch: isDevelopment,
-  // devtool: isDevelopment ? 'cheap-module-inline-source-map' : null,
+  mode: isDev ? 'development' : 'production',
+  entry: {
+    main: ['@babel/polyfill', './src/js/main.js']
+  },
+  watch: isDev,
+  devtool: isDev ? 'cheap-module-inline-source-map' : false,
   output: {
     filename: 'main.js'
   },
@@ -37,7 +41,7 @@ let webConfig = {
     noEmitOnErrors: true
   },
   plugins: [
-    new ExtractTextPlugin("hellos.css"),
+
   ]
 };
 
